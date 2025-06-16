@@ -1,0 +1,129 @@
+/* Product Container to Position Cards */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 69px;
+    max-width: 950px;
+    margin: 0 auto;  /* This pushes the container to the right */
+    padding: 7px;
+    /* Remove or adjust justify-content if needed */
+    justify-content: end; /* Ensures the grid tracks align to the right */
+    align-items: start;
+    align-content: space-between;
+    justify-items: end; /* Aligns items inside each cell to the right */
+}
+
+
+/* Individual Product Card */
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #333;
+    
+    /* Flexbox settings for uniform card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Hover Effect */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Adjust ratio (e.g., 16/9, 4/3, 1/1) */
+    object-fit: cover;   /* Ensures it fills the area but can still be cropped slightly */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    /* Remove the fixed height: height: 180px; */
+  }
+
+/* Image Hover Effect */
+.product-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Title */
+.product-card h3 {
+    color: #4B0082;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Price Styling */
+.price {
+    font-size: 18px;
+    color: #6A5ACD;
+    font-weight: bold;
+}
+
+/* Stock Info */
+.stock {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Product Description */
+.description {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    text-align: justify;
+    min-height: 60px; /* Ensures uniform height for all cards */
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background: black;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+}
+
+/* .add-to-cart:hover {
+    background: linear-gradient(to right, #5a4eb7, #7265d7);
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(1, 1fr); /* Switch to one column on smaller screens */
+    }
+    .product-card {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        max-width: 100%;
+    }
+    .product-card h3 {
+        font-size: 18px;
+    }
+    .price {
+        font-size: 16px;
+    }
+    .add-to-cart {
+        font-size: 14px;
+    }
+    .product-card img {
+        object-fit: contain; 
+      }
+}

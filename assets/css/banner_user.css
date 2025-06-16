@@ -1,0 +1,159 @@
+/* 🌟 Banner Container */
+.banner-container {
+  width: 97vw;
+  max-width: 100vw;
+  height: 526px;
+  margin: 14px 109px 83px 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  position: relative; /* Required for positioning elements inside */
+  box-shadow: 8px 8px 8px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 Banner Overlay (Creates Transparency) */
+.banner-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1); /* Light glass effect */
+  backdrop-filter: blur(5px); /* Soft blur */
+  z-index: 1; /* Keeps it behind text & button */
+}
+
+/* 🌟 Banner Image */
+.banner-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 2; /* Ensures image stays above the overlay */
+  position: relative;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* 🌟 Text Overlay (Title & Slogan) */
+.banner-text {
+  position: absolute;
+  z-index: 3;
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+/* 🌟 Styled Shop Now Button */
+.shop-now-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  color: #d2a679; /* Aged gold/tan */
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px; /* Sharper edges for a rugged look */
+  border: 2px solid rgba(210, 166, 121, 0.8); /* Faded gold */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 3;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: color 0.4s ease, background 0.4s ease, border 0.4s ease,
+    box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effect - Subtle Elevation & Depth */
+.shop-now-btn:hover {
+  background: rgba(61, 43, 27, 0.4); /* Deep rugged brown */
+  color: #f0e6d2; /* Soft parchment white */
+  transform: translateX(-50%) scale(1.05); /* Slight elevation */
+  border: 2px solid rgba(240, 230, 210, 0.9); /* Aged border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4),
+    /* Deep shadow for depth */ 0 2px 6px rgba(210, 166, 121, 0.5); /* Warm gold reflection */
+}
+
+/* 🎬 Button Fade-In Animation */
+/* @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+} */
+
+/* 🌟 Responsive Banner Adjustments */
+
+/* 📱 Tablets & Small Screens */
+@media screen and (max-width: 1024px) {
+  .banner-container {
+    width: 100vw; /* Full width */
+    height: 480px; /* Adjusted height for balance */
+    margin: 10px 0; /* Centered spacing */
+    border-radius: 0; /* Remove rounded edges for full coverage */
+  }
+
+  .banner-text {
+    font-size: 36px; /* Adjust text size */
+  }
+
+  .shop-now-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+/* 📱 Mobile Devices (iPhone X, Samsung Galaxy, etc.) */
+@media screen and (max-width: 768px) {
+  .banner-container {
+    width: 100vw; /* Full width */
+    height: 420px; /* Slightly reduced for better fit */
+    margin: 0; /* Remove extra spacing */
+    padding: 0; /* No padding for clean full-width effect */
+    border-radius: 0; /* Full-width effect */
+  }
+
+  .banner-overlay {
+    background: rgba(0, 0, 0, 0.3); /* Darken slightly for readability */
+  }
+
+  .banner-text {
+    font-size: 28px; /* Reduce text size */
+    padding: 0 10px;
+  }
+
+  .shop-now-btn {
+    bottom: 20px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* 📱 Ultra-Small Devices (iPhone SE, Foldables) */
+@media screen and (max-width: 480px) {
+  .banner-container {
+    height: 350px; /* Adjusted for smaller screens */
+  }
+
+  .banner-text {
+    font-size: 24px; /* Ensure readability */
+  }
+
+  .shop-now-btn {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+}

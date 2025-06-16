@@ -1,0 +1,246 @@
+/* Pro Grade User Management CSS */
+
+/* Root Variables for Easy Theme Management */
+:root {
+    --primary-color: #1d3557;
+    --secondary-color: #1d3557;
+    --bg-color: #f5f6fa;
+    --text-color: #2d3436;
+    --table-bg: #ffffff;
+    --hover-color: #dfe6e9;
+    --button-bg: #1d3557;
+    --button-hover: #354f72;
+    --delete-bg: #d63031;
+    --delete-hover: #ff7675;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* Banner / Nav Bar */
+.banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Optional nav inside banner
+.banner nav {
+    margin-top: 15px;
+}
+
+.banner nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.banner nav a:hover {
+    color: #dfe6e9;
+}
+*/
+
+/* Headings */
+
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Container for Form and Table Layout */
+.user-management-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Card styling for sections */
+.card {
+    background: var(--table-bg);
+    border-radius: var(--border-radius);
+    -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Form Styling */
+form {
+    flex: 0 0 350px;
+    background: var(--table-bg);
+    border-radius: var(--border-radius);
+    -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform var(--transition-speed);
+}
+
+form:hover {
+    transform: translateY(-3px);
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(108, 92, 231, 0.3);
+}
+
+/* Buttons */
+button {
+    background: var(--button-bg);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+/* Delete Link Styling */
+a {
+    background: var(--delete-bg);
+    color: white;
+    padding: 10px 14px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    display: inline-block;
+}
+
+a:hover {
+    background: var(--delete-hover);
+    transform: translateY(-2px);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--table-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--hover-color);
+}
+
+th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    transition: background var(--transition-speed);
+}
+
+tr:hover {
+    background: var(--hover-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .user-management-container {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    form {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    input, select {
+        font-size: 14px;
+    }
+    
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}

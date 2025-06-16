@@ -1,0 +1,695 @@
+/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Emblema+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color: #f8e9cc;
+    font-size: 1rem;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 100px; /* Adjust to be below navbar */
+    left: 20px; /* Adjust to place inside the blue-marked area */
+    width: 250px; /* Adjust width as needed */
+    height: 80vh; /* Adjust height as needed */
+    background: linear-gradient(135deg, rgba(28, 28, 28, 0.85), rgba(42, 42, 42, 0.85)); /* Sleek dark with transparency */
+    border-radius: 10px; /* Smooth edges */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Slightly stronger shadow for depth */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-300px); /* Hide initially */
+    z-index: 1000; /* Ensure it's above other elements */
+    backdrop-filter: blur(8px); /* Slight blur effect for a frosted glass feel */
+}
+
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+/* Menu Icon (Three Bars) */
+/* Sidebar Menu Icon */
+.menu-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Sidebar Menu Bars */
+.menu-icon div {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #e0e0e0, #a79c82); /* Subtle metallic gradient */
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.menu-icon:hover div {
+    background: linear-gradient(90deg, #f1f1f1, #c4b58d); /* Slightly enhanced contrast */
+    transform: scaleX(1.1);
+}
+
+/* Opening Animation */
+.menu-icon.open div:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.menu-icon.open div:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.open div:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+
+/* Navbar */
+/* 🌿 Navbar Styling - Dark Gradient */
+.navbar {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #1a1a1a, #000000); /* Black Gradient */
+    padding: 1.2rem 2rem;
+    color: #f5f5f5; /* Light Gray for Readability */
+    flex-wrap: wrap;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2); /* Stronger Shadow for Depth */
+    width: 100%;
+    border-bottom: 2px solid #444; /* Dark Gray Border */
+}
+
+/* 🌟 Logo Styling - White for Visibility */
+.navbar .logo {
+    /* font-family: "Cinzel", serif; */
+    font-family: "Cuprum", sans-serif;
+    font-size: 54px; /* Keeping the original size */
+    font-weight: bold;
+    background: linear-gradient(120deg, #ffffff 50%, #E6B800 50%); /* Equal White-Gold Blend */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: none;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(230, 184, 0, 0.3); /* Soft Gold Glow */
+}
+
+
+
+
+
+/* 🌟 General Icon Styling */
+.navbar .icons a {
+    font-family: "Poppins", sans-serif;
+    color: #bdbdbd; /* Soft Gray */
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* 🛒 Cart Button - Slightly White-Tinted */
+.navbar .icons a.cart {
+    color: #e0e0e0; /* Light Gray */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🛒 Cart Hover - Soft Contrast */
+.navbar .icons a.cart:hover {
+    background: #333333; /* Dark Gray */
+    color: #ffffff; /* White Text */
+}
+
+/* 🔥 Logout Button - Subtle & Refined */
+.navbar .icons a.logout {
+    color: #ff6666; /* Light Red */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔥 Logout Hover - Stronger Contrast */
+.navbar .icons a.logout:hover {
+    background: #4d0000; /* Deep Red */
+    color: #ffffff; /* White for Visibility */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;  /* Allow items to wrap */
+    justify-content: center;
+    gap: 1rem; /* Adds spacing between buttons */
+    max-width: 100%; /* Prevents overflow */
+    padding: 1rem;
+    overflow: hidden; /* Ensures buttons don’t go outside */
+}
+
+.nav-links button {
+    flex: 1 1 auto; /* Flexible but doesn't force equal widths */
+    min-width: 4rem; /* Adjusted for small screens */
+    padding: 0.5rem 1rem;
+    background: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1rem; /* Scales with screen size */
+    white-space: nowrap; /* Prevents text from breaking */
+}
+
+.navbar .nav-links {
+    margin-left: 50px; /* Adjust so "Home" doesn't overlap with menu */
+    display: flex;
+    gap: 20px;
+}
+
+
+.container {
+    max-width: 90vw; /* Ensures content stays within bounds */
+    margin: auto;
+}
+
+
+/* Sidebar Links */
+.sidebar {
+    background: rgb(10 10 10 / 72%);/* Deep dark with transparency */
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6); /* Soft shadow */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
+    backdrop-filter: blur(6px); /* Frosted glass effect */
+}
+
+/* Sidebar Title */
+.sidebar h2 {
+    text-align: center;
+    color: #e0e0e0; /* Soft white */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* Minimal separator */
+    padding-bottom: 10px;
+}
+
+/* Sidebar List */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sidebar List Items */
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    background: rgba(0, 0, 0); /* Deep sleek background */
+    color: #e0e0e0; /* Light Grey for better contrast */
+    border: 1px solid rgba(255, 255, 255, 0.12); /* Subtle borders */
+    transition: 0.3s ease-in-out;
+}
+
+/* Golden Hover Effect */
+.sidebar ul li a:hover {
+    background: rgba(0, 0, 0); /* Slightly lighter tone */
+    color: #FFD700; /* Soft Golden */
+    border-color: rgba(255, 215, 0, 0.6); /* Gold border */
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.7); /* Subtle golden glow */
+    transform: translateY(-2px); /* Gentle lift */
+}
+
+
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Categories */
+.categories {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background: rgba(20, 20, 20, 0.5); /* Transparent but visible */
+    padding: 10px 20px;
+    backdrop-filter: blur(10px); /* Stronger blur effect for distinction */
+    border-radius: 0;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow to separate it slightly */
+}
+
+/* Default menu items */
+.categories a {
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
+    color: #e0e0e0; /* Softer grayish white */
+    font-size: 16px;
+    padding: 8px 15px;
+    min-width: 100px;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Hover effect - subtle glow with slight color shift */
+.categories a:hover {
+    background: rgba(255, 255, 255, 0.08); /* Soft translucent effect */
+    color: #E6B800; /* Rich golden hue */
+    border-radius: 4px; /* Slightly rounded edges */
+    transform: scale(1.03); /* Subtle scale-up */
+    transition: transform 0.2s ease-out, background 0.25s ease-in-out, color 0.2s ease-in-out;
+    font-weight: 600; /* Slight emphasis */
+    text-decoration: underline; /* Adds a subtle highlight */
+}
+
+.menu li {
+    position: relative;
+}
+
+.dropdown::marker {
+    content: none;
+}
+
+/* Dropdown button */
+.dropbtn {
+    font-size: 18px;
+    color: #f5a623;
+    text-decoration: none;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.89); /* Aged parchment + deep rustic brown */
+    width: 90vw;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* A bit more depth */
+    border: 1px solid rgba(200, 150, 80, 0.4); /* Subtle golden accent */
+    z-index: 1000;
+    border-radius: 8px; /* Softer edges for a refined look */
+}
+
+
+.dropdown-content a:hover {
+    background: rgba(224, 194, 139, 0.8); /* Aged parchment gold with slight transparency */
+    color: #3d2b1b; /* Deep rugged brown for contrast */
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+/* Use Grid for Alignment */
+.dropdown-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dropdown-content {
+        width: 95vw;
+        max-width: 90%; /* Ensure it fits on small screens */
+        padding: 15px;
+    }
+    
+    .dropdown-row {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .dropbtn {
+        font-size: 16px;
+    }
+
+    .column h3 {
+        font-size: 14px;
+    }
+
+    .column a {
+        font-size: 14px;
+    }
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* search bar styling */
+.categories-search {
+    padding: 5px 15px;
+    height: 30px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: 2px solid rgba(150, 110, 60, 0.9); /* Aged bronze-like finish */
+    background: linear-gradient(145deg, rgba(25, 20, 15, 0.95), rgba(55, 45, 35, 0.95)); /* Aged leather texture */
+    color: #d4af7a; /* Ancient golden text */
+    font-size: 1rem;
+    text-align: left;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    
+    /* Typography for an adventurous feel */
+    font-family: 'Cinzel', serif; /* Classic engraved-style */
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* text-transform: capitalize; */
+    
+    /* Subtle 3D effect for depth */
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5), 
+                inset -3px -3px 5px rgba(60, 40, 20, 0.3);
+}
+
+.categories-search::placeholder {
+    color: rgba(212, 175, 122, 0.7); /* Aged golden map-like tone */
+    opacity: 0.8;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+.categories-search:focus {
+    background: linear-gradient(145deg, rgba(35, 30, 25, 0.95), rgba(65, 55, 45, 0.95));
+    color: #ffcc7a; /* Warmer gold for focus effect */
+    border: 2px solid #ffcc7a; /* Makes it feel interactive */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.6), 
+                inset -3px -3px 6px rgba(70, 50, 30, 0.4);
+}
+
+.categories-search:hover {
+    background: linear-gradient(145deg, rgba(30, 25, 20, 0.95), rgba(60, 50, 40, 0.95));
+    border-color: #d4af7a;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* General Banner Styling */
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #1E1E2E;
+    color: gold;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* 🔹 General Mobile & Tablet Fixes */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar-center-text {
+        font-size: 20px;
+        padding: 5px 0;
+    }
+
+    .icons {
+        margin-top: 10px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+        gap: 15px;
+    }
+
+    .banner-container {
+        width: 100vw; /* Full width */
+        height: 480px; /* Adjusted height */
+        margin: 10px 0; /* Centered spacing */
+        border-radius: 0; /* Remove rounded edges */
+    }
+}
+
+/* 📱 iPhone X & Small Devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar input {
+        width: 90%; /* Search bar takes full width */
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* One card per row */
+    }
+
+    .banner-container {
+        width: 100vw; /* Full width */
+        height: 420px; /* Slightly reduced for better fit */
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .banner-overlay {
+        background: rgba(0, 0, 0, 0.3); /* Darken slightly for readability */
+    } 
+    .categories-search {
+        width: 90%;
+    }
+}
+
+/* 📱 Ultra-Small Devices (Like iPhone SE, Foldables) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 5px 0;
+    }
+
+    .navbar-center-text {
+        font-size: 18px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* Full-width cards */
+        gap: 10px;
+    }
+
+    .icons {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .banner-container {
+        height: 350px; /* Adjusted for smaller screens */
+    }
+}
+
+
+
+
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1C1C1C, #444); /* Deep black fading into steel gray */
+    color: #EAEAEA; /* Soft white for contrast */
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-transform: uppercase;
+    border: 3px solid #555; /* Muted metallic gray border */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(100, 100, 100, 0.4), /* Subtle soft glow */
+                inset 2px 2px 5px rgba(0, 0, 0, 0.5); /* Inner depth */
+}
+
+/* 🔥 Hover Effect: "Mystic Pulse" */
+.profile-icon:hover {
+    background: linear-gradient(135deg, #252525, #666); /* Dark charcoal with gray highlights */
+    transform: scale(1.15) rotate(3deg); /* Subtle 3D shift */
+    border-color: #888; /* Slightly lighter gray border */
+    box-shadow: 0 0 12px rgba(160, 160, 160, 0.6), /* Soft glowing aura */
+                inset 3px 3px 7px rgba(0, 0, 0, 0.5);
+}
+
+/* 🖤 Click Effect: "Pressed Carbon" */
+.profile-icon:active {
+    transform: scale(1.05) translateY(2px); /* Pressed button effect */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6); /* Deep press effect */
+}
+
+
+
+
+
+
+
+
+
+
+.logout-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.logout-btn:hover {
+    background-color: darkred;
+}
+
+/* Center text styling */
+.navbar-center-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Charm", cursive;
+    color: #E6B400; /* Rich golden-yellow, more striking */
+    text-transform: capitalize;
+    letter-spacing: 1.8px;
+    text-shadow: 
+        3px 3px 5px rgba(0, 0, 0, 0.8), /* Deep rugged shadow */
+        0 0 6px rgba(230, 180, 0, 0.7), /* Soft golden glow */
+        -2px -2px 3px rgba(0, 0, 0, 0.4); /* Worn-out text effect */
+}
+
+/* Cursor Blinking Effect */
+.cursor {
+    font-size: 18px;
+    font-family: "Charm", cursive;
+    color: #FFA500; /* Vibrant burnt-orange, adding contrast */
+    animation: blink 0.8s infinite;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.6), 
+        0 0 6px rgba(255, 165, 0, 0.7); /* More subtle glowing effect */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+

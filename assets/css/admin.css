@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f5f7;
+    color: #333;
+}
+
+/* Headings */
+h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #1d3557;
+    color: #f1faee;
+    padding: 15px 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav h2 {
+    color: #a8dadc;
+}
+
+nav a {
+    color: #f1faee;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #a8dadc;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+/* Dashboard Box Layout */
+.dashboard-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* User Box & Product Box Styling */
+.user-box, .product-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f4f5f7;
+    border: 1px solid #dcdcdc;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #380f60;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Waving User & Product Image */
+.wave-img, .product-img {
+    width: 50px;
+    height: auto;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Show Images on Hover */
+.user-box:hover .wave-img,
+.product-box:hover .product-img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+/* Dashboard Items */
+.dashboard-box p {
+    background-color: #f4f5f7;
+    border: 1px solid #dcdcdc;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #380f60;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-box p:hover {
+    transform: translateY(-5px);
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode nav {
+    background-color: #121212;
+}
+
+.dark-mode section {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+nav a, nav h2, #dark-mode-toggle {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.dark-mode .dashboard-box p {
+    background-color: #333;
+    color: #ffffff;
+    border-color: #444;
+}
+
+#dark-mode-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Dark mode button */
+.dark-mode #dark-mode-toggle {
+    background-color: #121212;
+    color: #fff !important;
+    border: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .dashboard-box {
+        grid-template-columns: 1fr;
+    }
+}

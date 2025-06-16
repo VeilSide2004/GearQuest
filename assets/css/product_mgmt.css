@@ -1,0 +1,135 @@
+/* Google Font for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #eef1f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container: Positions Form on Left & Table on Right */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 30px;
+    gap: 30px; /* Adds spacing between form and table */
+}
+
+/* Left Side: Form Styling */
+.form-container {
+    flex: 1;
+    max-width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+    transform: translateY(-3px);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Inputs & Textarea */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+input:focus, textarea:focus {
+    border-color: #6A5ACD;
+    box-shadow: 0 0 8px rgba(106, 90, 205, 0.3);
+    outline: none;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(182deg, #6A5ACD, #1d3557);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5a4eb7, #3a2e99);
+    transform: scale(1.05);
+}
+
+/* Right Side: Table Container */
+.table-container {
+    flex: 2;
+    width: 100%;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background: linear-gradient(182deg, #6A5ACD, #1d3557);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: rgba(106, 90, 205, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-container {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}

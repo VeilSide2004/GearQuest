@@ -1,0 +1,33 @@
+/* Partner Section Container */
+.partner-container {
+    padding: 20px;
+    text-align: center;
+    background: #f9f9f9; /* optional background color */
+    margin-bottom: 20px;
+}
+
+.partner-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container for Partner Logos */
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 219px;
+    flex-wrap: wrap;
+}
+
+/* Logo Images */
+.partner-logos a img {
+    width: 120px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner-logos a img:hover {
+    filter: grayscale(0%);
+}
